@@ -13,7 +13,7 @@ Running a Flutter demo in a Docker container
 
 cd /h/flutter/docker    
 docker build -t flutter_android:v1.0 .  
-docker run -it  -w /app -e DISPLAY=$DISPLAY -e UID=$(id -u) -e GID=$(id -g)   --device=/dev/bus --device /dev/kvm --device /dev/dri -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/bus/usb:/dev/bus/usb --shm-size=2g  flutter_android:v1.0  /bin/bash  
+docker run -it -p 8080:8080 -w /app -e DISPLAY=$DISPLAY -e UID=$(id -u) -e GID=$(id -g)   --device=/dev/bus --device /dev/kvm --device /dev/dri -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev/bus/usb:/dev/bus/usb --shm-size=2g  flutter_android:v1.0  /bin/bash  
 flutter doctor  
 
 ### 运行web demo
